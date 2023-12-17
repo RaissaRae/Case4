@@ -1,3 +1,36 @@
+#name: Build and Release
+#
+#on:
+#  push:
+#    branches:
+#      - main
+#
+#jobs:
+#  build:
+#    runs-on: windows-latest
+#
+#    steps:
+#    - name: Checkout repository
+#      uses: actions/checkout@v2
+#
+#    - name: Set up MSBuild
+#      uses: microsoft/setup-msbuild@v1.0.2
+#
+#    - name: Restore NuGet packages
+#      run: dotnet restore TaskAppCase4/TaskAppCase4.csproj
+#      working-directory: C:\Users\32478\Desktop\Case4\TaskAppCase4
+#
+#    - name: Build application
+#      run: |
+#        msbuild /p:Configuration=Release /p:Platform="Any CPU" /p:OutDir=bin\Release\ TaskAppCase4.csproj
+#      working-directory: C:\Users\32478\Desktop\Case4\TaskAppCase4
+#
+#    - name: Upload artifact
+#      uses: actions/upload-artifact@v2
+#      with:
+#        name: TaskApplication
+#        path: C:\Users\32478\Desktop\Case4\TaskAppCase4\bin\Release\
+
 name: Build and Release
 
 on:
@@ -15,18 +48,17 @@ jobs:
 
     - name: Set up MSBuild
       uses: microsoft/setup-msbuild@v1.0.2
-
+      
     - name: Restore NuGet packages
       run: dotnet restore TaskAppCase4/TaskAppCase4.csproj
-      working-directory: C:\Users\32478\Desktop\Case4\TaskAppCase4
 
     - name: Build application
       run: |
-        msbuild /p:Configuration=Release /p:Platform="Any CPU" /p:OutDir=bin\Release\ TaskAppCase4.csproj
-      working-directory: C:\Users\32478\Desktop\Case4\TaskAppCase4
+        cd TaskAppCase4
+        msbuild /p:Configuration=Release /p:Platform="Any CPU" /p:OutDir=bin\Release\
 
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
         name: TaskApplication
-        path: C:\Users\32478\Desktop\Case4\TaskAppCase4\bin\Release\
+        path: TaskAppCase4\bin\Release\
