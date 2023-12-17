@@ -18,5 +18,6 @@ namespace TaskAppCase4.Entites
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Task> Tasks { get; set; }
     }
 }
