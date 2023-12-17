@@ -16,9 +16,9 @@
             </ListView.ContextMenu>
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Id" Width="30"  DisplayMemberBinding="{Binding Id}"/>
-                    <GridViewColumn Header="Title" Width="150" DisplayMemberBinding="{Binding Title}"/>
-                    <GridViewColumn Header="Description" Width="150" DisplayMemberBinding="{Binding Description}"/>
+                    
+                    <GridViewColumn Header="Title" Width="399" DisplayMemberBinding="{Binding Title}"/>
+                    <GridViewColumn Header="Description" Width="399" DisplayMemberBinding="{Binding Description}"/>
                 </GridView>
             </ListView.View>
         </ListView>
@@ -28,8 +28,8 @@
         <Grid x:Name="EditGrid" IsEnabled="{Binding ElementName=EnableCheckBox,Path=IsChecked}" Margin="3,260,0,0"  HorizontalAlignment="Stretch" VerticalAlignment="Top">
             <Label Content="Title" HorizontalAlignment="Left" Margin="3,0,0,0"   VerticalAlignment="Top"/>
             <Label Content="Description" HorizontalAlignment="Left" Margin="3,40,0,0" VerticalAlignment="Top"/>
-            <TextBox Name="TitleTextBox" Text="{Binding ElementName=TaskList ,Path=SelectedItem.Title,Mode=OneWay}" HorizontalAlignment="Left"  Margin="70,0,0,0" Width="150" Height="26" VerticalAlignment="Top"/>
-            <TextBox Name="DescriptionTextBox" Text="{Binding ElementName=TaskList ,Path=SelectedItem.Description,Mode=OneWay}" HorizontalAlignment="Left" Margin="70,40,0,0" Width="150" Height="26" VerticalAlignment="Top"/>
+            <TextBox Name="TitleTextBox" Text="{Binding ElementName=TaskList ,Path=SelectedItem.Title,Mode=OneWay}" HorizontalAlignment="Center"  Margin="70,0,0,0" Width="150" Height="26" VerticalAlignment="Top"/>
+            <TextBox Name="DescriptionTextBox" Text="{Binding ElementName=TaskList ,Path=SelectedItem.Description,Mode=OneWay}" HorizontalAlignment="Center" Margin="70,40,0,0" Width="150" Height="26" VerticalAlignment="Top"/>
         </Grid>
 
         <Button x:Name="CreateButton" HorizontalAlignment="Left" Click="CreateButton_Click" Margin="10,360,0,0" VerticalAlignment="Top" >

@@ -1,0 +1,31 @@
+name: Build and Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up MSBuild
+      uses: microsoft/setup-msbuild@v1.0.2
+      
+    - name: Restore NuGet packages
+      run: dotnet restore TaskApp4/TaskApp4.csproj
+
+    - name: Build application
+      run: |
+        cd TaskApp
+        msbuild /p:Configuration=Release /p:Platform="Any CPU" /p:OutDir=bin\Release\
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: TaskApplication
+        path: TaskAppCase4\bin\Release\
