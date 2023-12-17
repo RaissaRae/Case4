@@ -17,7 +17,7 @@ jobs:
       uses: microsoft/setup-msbuild@v1.0.2
       
     - name: Restore NuGet packages
-      run: dotnet restore TaskApp4/TaskApp4.csproj
+      run: dotnet restore TaskAppCase4/TaskApp4.csproj
 
     - name: Build application
       run: |
