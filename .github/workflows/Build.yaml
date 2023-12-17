@@ -17,8 +17,8 @@ jobs:
       uses: microsoft/setup-msbuild@v1.0.2
       
     - name: Restore NuGet packages
-      run: dotnet restore TaskAppCase4\TaskApp4.csproj
-      working-directory: C:\Users\32478\Desktop\Case4TaskAppCase4
+      run: dotnet restore TaskAppCase4/TaskApp4.csproj
+      working-directory: TaskAppCase4
     
   
 
