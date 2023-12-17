@@ -17,12 +17,12 @@ jobs:
       uses: microsoft/setup-msbuild@v1.0.2
       
     - name: Restore NuGet packages
-      run: dotnet restore TaskAppCase4/TaskApp4.csproj
+      run: dotnet restore C:\Users\32478\Desktop\Case4TaskAppCase4\TaskAppCase4\TaskApp4.csproj
 
     - name: Build application
       run: |
-        cd TaskApp
-        msbuild /p:Configuration=Release /p:Platform="Any CPU" /p:OutDir=bin\Release\
+    cd TaskAppCase4
+    msbuild /p:Configuration=Release /p:Platform="Any CPU" /p:OutDir=bin\Release\ TaskApp4.csproj
 
     - name: Upload artifact
       uses: actions/upload-artifact@v2
